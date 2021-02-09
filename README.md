@@ -18,6 +18,12 @@ autogui.click(x, y, button, clicks, interval)
 autogui.doubleClick(x, y)
 autogui.dragTo(x, y, button, time)
 autogui.dragBy(dx, dy, button, time)
+--Keyboard
+autogui.keyDown(key)
+autogui.keyUp(key)
+autogui.press(key)
+autogui.write(str, interval)
+autogui.hotkey(...)
 ```
 
 # Examples
