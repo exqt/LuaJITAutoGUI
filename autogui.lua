@@ -55,7 +55,7 @@ local CONST = {
 }
 --endregion
 
-local autogui = {dt = 1/30}
+local autogui = {dt = 1/10}
 
 function autogui.sleep(t)
   ffi.C.Sleep(t*1000)
@@ -97,14 +97,15 @@ function autogui.moveTo(x, y, time)
   local dt = autogui.dt
   for t=0, time, dt do
     autogui._setCursorPos(lerp(sx, x, t/time), lerp(sy, y, t/time))
-    if t + dt > time then return end
+    if t + dt > time then break end
     autogui.sleep(dt)
   end
+  autogui._setCursorPos(x, y)
 end
 
 function autogui.moveBy(dx, dy, time)
   local x, y = autogui.position()
-  autogui.moveto(x + dx, y + dy, time)
+  autogui.moveTo(x + dx, y + dy, time)
 end
 
 function autogui.mouseDown(button)
@@ -152,13 +153,15 @@ end
 
 function autogui.dragTo(x, y, button, time)
   autogui.mouseDown(button)
-  autogui.moveto(x, y, time)
+  autogui.moveTo(x, y, time)
+  autogui.sleep(0.1)
   autogui.mouseUp(button)
 end
 
 function autogui.dragBy(dx, dy, button, time)
   autogui.mouseDown(button)
-  autogui.moveto(dx, dy, time)
+  autogui.moveTo(dx, dy, time)
+  autogui.sleep(0.1)
   autogui.mouseUp(button)
 end
 

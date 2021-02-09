@@ -28,10 +28,8 @@ local radius = 100
 local angle = 4/5*math.pi
 
 autogui.moveTo(x + radius, y)
-autogui.mouseDown()
 for i=1, 5 do
   local px = x + radius*math.cos(angle*i)
   local py = y + radius*math.sin(angle*i)
-  autogui.moveTo(px, py, 0.1)
+  autogui.dragTo(px, py)
 end
-autogui.mouseUp()
