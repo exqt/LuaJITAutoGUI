@@ -24,6 +24,9 @@ autogui.keyUp(key)
 autogui.press(key)
 autogui.write(str, interval)
 autogui.hotkey(...)
+--MessageBox
+autogui.alert(text, title)
+autogui.confirm(text, title) -- returns 'OK' or 'Cancel'
 ```
 
 # Examples

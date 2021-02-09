@@ -43,6 +43,7 @@ unsigned int SendInput(
   INPUT pInputs,
   int     cbSize
 );
+int MessageBoxA(void *w, const char *txt, const char *cap, int type);
 ]]
 local CONST = {
   INPUT_MOUSE = 0,
@@ -346,6 +347,21 @@ function autogui.hotkey(...)
   end
   for i=#keys, 1, -1 do
     autogui.keyUp(keys[i])
+  end
+end
+--endregion
+
+--region Message
+function autogui.alert(text, title)
+  ffi.C.MessageBoxA(nil, text, title or "", 0)
+end
+
+function autogui.confirm(text, title)
+  local r = ffi.C.MessageBoxA(nil, text, title, 0x00000001)
+  if r == 1 then
+    return "OK"
+  else
+    return "Cancel"
   end
 end
 
