@@ -16,8 +16,8 @@ autogui.mouseUp(button)
 autogui.scroll(amount)
 autogui.click(x, y, button, clicks, interval)
 autogui.doubleClick(x, y)
-autogui.dragTo(x, y, time)
-autogui.dragBy(dx, dy, time)
+autogui.dragTo(x, y, button, time)
+autogui.dragBy(dx, dy, button, time)
 ```
 
 # Examples
