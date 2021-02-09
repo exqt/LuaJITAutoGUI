@@ -146,8 +146,8 @@ function autogui.click(x, y, button, clicks, interval)
   clicks = clicks or 1
   interval = interval or autogui.dt
   for i=1, clicks do
-    autogui.mouseDown(x, y, button)
-    autogui.mouseUp(x, y, button)
+    autogui.mouseDown(button)
+    autogui.mouseUp(button)
     if i < clicks then autogui.sleep(interval) end
   end
 end
