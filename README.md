@@ -2,7 +2,7 @@
 LuaJITAutoGUI lets your Lua scripts control the mouse and keyboard to automate interactions with other applications. Inspired by [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/)
 
 - [LuaJIT](https://luajit.org/) is required to run
-- only supported on Windows
+- Windows only (for now)
 - screenshot functions are not implemented
 
 # Function Reference
@@ -33,3 +33,13 @@ for i=1, 5 do
   local py = y + radius*math.sin(angle*i)
   autogui.dragTo(px, py)
 end
+```
+```lua
+autogui.write("hello!, 안녕 こんにちは")
+autogui.sleep(0.1)
+autogui.hotkey('ctrl', 'a') -- select all
+autogui.hotkey('ctrl', 'x') -- cut
+```
+
+# Credit
+- [utf8.lua](https://github.com/luapower/utf8)
