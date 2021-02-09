@@ -1,5 +1,5 @@
-# LuaAutoGUI
-LuaAutoGUI lets your Lua scripts control the mouse and keyboard to automate interactions with other applications. Inspired by [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/)
+# LuaJITAutoGUI
+LuaJITAutoGUI lets your Lua scripts control the mouse and keyboard to automate interactions with other applications. Inspired by [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/)
 
 - [LuaJIT](https://luajit.org/) is required to run
 - only supported on Windows
